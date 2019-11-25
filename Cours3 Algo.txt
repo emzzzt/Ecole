@@ -1,0 +1,143 @@
+Variables
+	notesEnlettre : caratere
+
+Debute
+	Ecrire("Entrez la note ne lettre que vous avez eu sur votre bulletin (A,B,C,D,E)")
+	Lire(noteEnlettre)
+
+	Si noteEnlettre ="A"
+		Ecrire("Bravo!")
+	SinonSi noteEnlettre="B"
+		Ecrire("Tres bien!")
+	SinonSi noteEnlettre="C"
+		Ecrire("Correct")
+	SinonSi noteEnlettre="D"
+		Ecrire("Attention")
+	SinonSi noteEnlettre="E"
+		Ecrire("Echec")
+
+	Switch case
+	Debute
+	Ecrire("Entrez la note ne lettre que vous avez eu sur votre bulletin (A,B,C,D,E)")
+	Lire(noteEnlettre)
+
+	Cas si (noteEnlettre) = A 
+		Ecrire("Bravo!")
+	Cas si (noteEnlettre) = B
+		Ecrire("Tres bien")
+	Cas si (noteEnlettre) = C
+		Ecrire("Correct") 
+	Cas si (noteEnlettre) = D
+		Ecrire("Attention")
+	Cas si (noteEnlettre) = E
+		Ecrire("Echec")  
+	Autre:
+		Ecire("Note invalide il fallait entrer A, B, C, D, ou E.")
+	Fin cas
+
+	TANT QUE (while)
+
+TANT QUE condition
+	instruction1
+	instruction2
+	...
+	instructionN
+FIN TANT QUE
+
+Exemple TANT QUE
+
+Variables
+	nbUsager, Compteur : integer
+Debut
+	Compteur <-1
+	Ecrire("Entrez un nombre entier")
+	TANT QUE Compteur <= nbusager
+		EcrireCompter
+		Compter <- cOMPTEUR +1
+	FIN TANT QUE
+
+	Exercice 
+	Faire un programme qui affiche des entiers de 1 a 100 et ensuite faire une version qui affiche les entiers pair de 1 a 100
+
+Variable
+ Compteur//i : entier
+Debut
+	Compteur<- 1
+	TANT QUE Compteur <= 100
+	Ecrire(Compteur)
+	Compteur + Compteur + 1
+	FIN TANT QUE
+
+Variable
+	Compteur: entier // i : integer
+Debut
+	Compteur <-2
+	TANT QUE Compteur <= 100
+	Ecrire(Compteur)
+	Compteur = Compteur + 2
+	FIN TANT 
+
+Calcul de X a la puissance n ou x est un reel non nul et n un entier positif ou nul.
+
+Variables 
+x, resultat : reel
+n, i : entier //integer
+
+Debut 
+	Ecrire("Entrez la valeur de x et la valeur de n, dans l'ordre")
+	lire(x)
+	lire(n)
+	resultat <-1
+	i <-1
+	Tant Que (i<=n)
+		resultat <- resultat * x
+		i <- i + 1
+	Fin tant Que
+		Ecrire( x & "a la puissance" & n & "domme: " & resultat)
+	Fin
+
+	tester avec x= 3 n= 4
+
+	Faire un programme qui calcul n! (soit n factoriel). Une factorielle est calculee comme
+	etant  1 * 2 * 3 * 4 * .... jusqu'a n. Par exemple, 5 factoriel est 1 * 2 * 3 * 4 * 5.
+
+	Variables i, nombre, factorielle : integer
+
+	Debut 
+		Ecrire("Entrez un nombre entre 1 et 20.")
+		lire(nombre)
+		Si nombre < 1 || n > 20
+			Ecrire(il fallait entrer un nombre entre 1 et 20.)
+			Sinon
+				i <-i 
+				Factorielle <- 1
+				Tant que i<= nombre
+					factorielle <- factorielle * i 
+					 i <- i + 1
+				Fin tant que
+				Ecrire("la factorrielle de " & nombre & " est : " & factorielle)
+			Fin si
+		Fin
+
+		autre facon
+
+		avec boucle de validation
+
+		Variables i, nombre, factorielle : integer
+
+		Debut
+			Ecrire("Entrez un nombre entre 1 et 20.")
+			lire(nombre)
+			 TANT QUE nombre < 1 || nombre > 20
+			 	ecrire("il fallait entrer un nombre entre 1 et 20.")
+			 	lire(nombre)
+			 FIN TANT QUE
+
+			 // on ne sait pas combien de fois cette boucle va s'executer sauf si le nombre entrer respecte les contidion de validation
+
+			 Pour la semaine prochaine : lire les notes de cours et faire l'exercice
+
+			 Ecrire un programme qui determine combien de nombre dans la suite.
+
+			
+
