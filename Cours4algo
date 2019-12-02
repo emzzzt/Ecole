@@ -1,0 +1,181 @@
+Écrire un programme qui détermine combien de nombres dans la suite
+1 + 2 + 3 + 4 ...
+
+Variables
+    sommes, i : entier
+Début
+    i <- 0
+    somme <- 0
+    
+    Tant que somme <= 100
+        i <- i + 1
+        comme <- somme + i
+    Fin Tant que
+Écrire(``cela prend`` & i & ``nombre dans la suite 1 + 2 + 3 + ... + n pour atteindre une somme qui dépasse 100.
+La somme résultante est`` & somme & ``.``)
+
+notes de cours 4
+
+Faire tant que (do while)
+
+tant que i < 5
+    Écrire(``ceci ne sera jamais éxécuté!``)
+fin tant que
+    Écrire(``Apres la boucle``)
+    
+voici la version avec faire tant que
+
+Exercice à faire
+avec Faire Tant Que
+(do while)
+Faites le pseudocode pour un programme qui demande à un usager  d'entrer un serie de notes d'examen. 
+Ajouter chaque score à un total. Après chatre entrée d'une note, demander à l'usager s'il veut encore ajouter une autre note.
+Si l'usager dit oui, on continue la boucle. Sinon, il sort de la boucle, calculer la moyenne de toutes les notes entrées.
+
+
+Variable
+    note, nbNotes, total : entier
+    moyenne : reel
+    reponseUsager : string
+Début
+    nbNotes <- 0
+    total <- 0
+        Faire
+            Écrire(''Entrez une note.'')
+            lire(note)
+            total <- total + note
+            nbNotes <- nbNotes + 1
+            Écrire(''Voulez-vous entrer une autre note?'')
+            lire(réponse usager)
+    Tant que reponseUsager = ''oui''
+        moyenne <- total / nbNotes
+        Écrire(''la moyenne des notes entrées est :'') & moyenne
+    Fin
+    
+Les boucles Pour (For)
+Pour i allant de initiale à finale avec pas de pas (step)
+
+ex
+Pour i allant de 1 à 10 avec pas de 1
+Ecrire(i)
+Fin Pour
+ (on n'a pas besoin d'écrire i + 1 à cause de step 1)
+ 
+ 
+ Avec la boucle pour
+ Variable
+    note, nbNotes, total : entier
+    moyenne : reel
+    reponseUsager : string
+Début
+    nbNotes <- 0
+    total <- 0
+        Pour i allant de 1 a 50 
+            Écrire(''Entrez une note.'')
+            lire(note)
+            total <- total + note
+            nbNotes <- nbNotes + 1
+            Écrire(''Voulez-vous entrer une autre note?'')
+            lire(réponse usager)
+    Tant que reponseUsager = ''oui''
+        moyenne <- total / nbNotes
+        Écrire(''la moyenne des notes entrées est :'') & moyenne
+    Fin Pour
+    
+    
+Avec une boucle Pour, faire un algorithe qui affiche la table de multiplication du nombre 6
+ne pas oublier de concaténer la reponse
+1*6 = 6
+2*6 = 12
+3*6 = 18
+4*6 = 24
+...
+12*6 = 72
+
+//variables : 
+//    i, multiplication : integer
+
+Début
+    pour i = 1 to 12 
+    i <- i * 6
+Écrire(i & '' x 6 ='' & multiplication )
+    fin pour
+Fin
+
+Exercice
+Faire un programme qui demande ä l'usager d'entrer 20 nombres. À la fin de la boucle, 
+affichez le nombre le plus grand qui a été entré et le nombre le plus petit qui a été entré.
+
+Variables i , nbMax, nbMin, nbUsager : entier
+    Début
+        Écrire(''entrer une valeur'')
+        lire(max)
+        min <- max
+        
+        Pour i allant de 1 to 19 
+            Écrire(''Entrer une valeur.)
+            Lire(nbUsager)
+            
+            Si nbUsager < nbMin
+                nbMin <- nbUsager
+            Sinon Si nbUsager > nbMax
+                nbMax <- nbUsager
+            Fin Si
+        Fin pour
+    Fin
+
+Exemple de boucles inmbriquée
+
+Variables : i, j : Integer
+Début
+    Pour i allant de 1 à 3
+        Pour j allant de 1 à 3
+            Écrire(''i : '' & i & '', j :'' & j)
+        Fin Pour
+    Fin Pour
+Fin
+
+Output
+
+i   j
+1   1
+1   2
+1   3
+2   1
+2   2
+2   3
+3   1
+3   2
+3   3
+
+Résultat
+
+Un tour de boucle extérieure.
+i : 1, j : 1
+i : 1, j : 2
+i : 1, j : 3
+Un tour de boucle extérieure.
+i : 2, j : 1
+i : 2, j : 2
+i : 2, j : 3
+Un tour de boucle extérieure.
+i : 3, j : 1
+i : 3, j : 2
+i : 3, j : 3
+Fin des boucles.
+
+Avec des boucles imbriquées Pour, faire un algorithe qui affiche la table de multiplication des nombre de 1 a 12
+ne pas oublier de concaténer la reponse
+
+Variables : 
+   i, j, multiplication : integer
+
+Début
+    Pour i = 1 to 12
+        Pour j = 1 to 12 
+            j <- j * 12
+            multiplication <- i * j
+            Écrire(j & '' x '' & i ='' & multiplication )
+        fin Pour
+    fin Pour
+Fin
