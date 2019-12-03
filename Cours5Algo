@@ -1,0 +1,127 @@
+1. Écrire un algorithme qui demande à l'usager de deviner un nombre compris entre 1 et 20, jusqu'a ce qu'il trouve la réponse que vous avez caché dans une constante nommée BonneReponse. Si la réponse de l'usager est plus grande que le nombre à deviner on fera apparaitre un message "essayez plus petit" et inversement "essayez plus grand" si le nombre essayé est inférieur au nombre caché l'utilisateur a droit à 3 essais maximum!
+
+2.
+
+
+
+
+
+
+Cours 5 Les Tableaux
+
+Exercice
+a) Avec une bouble POUR faire un algorithme qui fait remplir à l'usager un tableau de 10 entiers.
+
+variables 
+i : integer
+Tableau leTableau[10]: Integer
+Début
+												//BOUCLE DE REMPLISSAGE
+	Pour i allant de 0 à 9
+	Écrire("veuillez entrer un entier")
+	Lire(leTableau[i]
+	Fin Pour
+Fin
+
+b) après le remplissage, repasser à travers le tableau pour en calculer la somme des entiers contenus 
+dans le tableau et la moyenne des entiers contenus dans le tableau
+
+
+variables
+moyenne : reel
+i, somme: integer
+Tableau leTableau[10]: Integer
+Début
+
+	Pour i allant de 0 à 9
+		Écrire("veuillez entrer un entier")
+		Lire(leTableau[i]
+	Fin Pour
+
+		//TRAVERSER LE TABLEAU ET CALCULER LA SOMME 
+
+		somme <- 0
+			
+		Pour i allant de 0 à 9 
+			somme <- somme + leTableau[i]
+		Fin Pour
+
+		moyenne <- somme / 10
+			Écrire("la somme est de " & somme & "et la moyenne est de " & moyenne)
+
+Fin
+
+
+Exercice des notes de cours
+
+a) remplir un tableau de 15 entiers à partir de nombres entrés par l'usager.(utiliser la boucle de remplissage)
+
+
+variables 
+i : integer
+Tableau leTableau[15]: Integer
+Début
+												//BOUCLE DE REMPLISSAGE
+	Pour i allant de 0 à 14
+	Écrire("veuillez entrer un entier")
+	Lire(leTableau[i]
+	Fin Pour
+Fin
+
+
+b) Avec une boucle TANT QUE trouver l'indice (la position dans le tableau) du premier élément nul (de valeur 0) et affichez cette position dans un message. S'il n'y a pas d'éléments nuls dans le tableau affichez le à l'usager ("il n'y a pas d'élément nul dans le tableau").
+
+variables
+i : integer
+Tableau leTableauX[] : Integer
+Début
+	nbDeCases <- Taille(tableauX)
+	Tant que leTableau[]
+
+	Fin Tant que
+
+
+
+//Solution
+
+Variables
+	tableau unTableau[15] : entier
+	i : entier
+	trouve : booléen
+
+Début 
+ // boucle de remplissage
+ Pour i allant de 0 à Taille(inTableau) - 1
+ 	Écrire("Entrez un nombre.")
+ 	Lire(unTableau[i])
+ Fin Pour
+
+ trouvre <- faux
+ i <- 0
+
+ Tant Que trouve = faux && i < Taille(unTableau)
+ 	//déterminer si l'élément est nul
+ 	Si unTableau[i] = 0
+ 		trouve = vrai 
+ 	Sinon i <- i + 1
+ 	Fin Si
+ Fin Tant Que
+
+
+ //si il y avait un élément nul , afficher son indice 
+
+ 	Si trouve = vrai
+ 		Écrire("Il y avait un élément nul à la position " & i)
+ 	Sinon
+ 		Écrire("il n'y avait pas d'élément nul dans le tableau.")
+ 	Fin Si
+Fin
+
+
+
+//Pratique pour le prochain cours
+
+a) Avec une boucle Pour, remplir un tableau de 10 entiers à partir de nombres entrés par l'usager.(Vous pouvez réeutiliser la boucle de remplissage développée en préallable.)
+
+
+b)Dans une NOUVELLE BOUCLE  (une seule nouvelle boucle). Claculez simultanément la somme des eniers positifs et la somme des entiers négatif dans le tableau. et les afficher à l'usager.
