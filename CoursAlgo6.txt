@@ -1,0 +1,194 @@
+// Cours 6 Algo
+Fonction et procédures
+
+derniere matiere avant l'intra!
+
+dans le cas de Lire(variable) on envoie ce qui se trouve en tre les parenthèses comme paramètre
+
+si on a compris les fonctions on va comprendre les procédures
+
+Fonction nom (paramètres et types ) : type_fonction
+Variables // variables utilisées dans la fonction (locale)
+Début
+	instructions constituant le corps de la fonction
+	Retourne x // x étant la valeur de retour. la valeur de retour peut etre vide.
+Fin
+
+Définition et appel
+
+Exxemple de fonction
+//Définition de la fonction
+Fonction ecrireBonjour() : vide
+Début
+	Écrire("Bonjour")
+	Retourne;
+Fin
+
+//Appel de la fonction dans un algorithme normal
+	Début
+		ecrireBonjour()
+	Fin
+
+Fonction lireUneNoteSurCent : réel
+Variables
+	note : réel
+Début
+	Écrire("Entrez une note :")
+	lire(note)
+	Tant Que ((note <=0) OU (note > 100))
+		Écrire("Vous avez fait un erreur! Entrez une note entre 0 et 100.")
+		lire(note)
+	Fin Tant Que
+	retourne note
+Fin
+
+
+///Exemple du prof 
+
+Fonction MultiplieParDeux(nb : entier) : entier
+Variables
+	resultat : entier
+Début
+		resultat <- nb * 2
+		retourne resultat
+Fin
+
+Programme principal
+
+Variables
+	nombreUsager : entier
+	double : entier
+Début
+	Écrire("Entrez un nmobre que vous voulez multiplier par deux.")
+	Lire(nombreUsager)
+	double <- MultiplieParDeux(nombreUsager)
+	Écrire("Votre nombre multiplier par deux" : & double) 
+Fin
+
+//Procédures//
+//la tache de la procédure c'est d'exécuter des chose par exemple//
+
+Procédure RepeteMessage(message : string, nbRepete : entier)
+Variables 
+	i : entier
+Début
+	Pour i allant de 1 à nbRepete
+		Écrire(message)
+	Fin Pour
+Fin
+
+//Programme principal//
+
+Variables
+	msgUsager : string
+	nbFois : entier
+Début
+	Écrire("Entrez le message à afficher.")
+	Lire(msgUsager)
+	Écrire("Entrez le nombre de fois que vous voulez l'afficher.")
+	Lire(nbFois)
+	RepeteMessage(msgUsager, nbFois)
+Fin
+
+Exercice 1
+a) Faire une fonction CelciusAFahrenheit qui calcule le nombre de degrés Fahrenheit pour un nombre de degrés Celcius envoyé en paramètres.
+//Ma réponse
+Fonction CelciusAFahrenheit(degC : réel) : réel
+Variables
+	resultat : réel
+Début 
+	resultat <- degC * 9/5 + 32
+	retourne resultat
+Fin
+
+//reponse du prof
+
+//Meme que moi à l'exception de nom de variables
+
+
+b) Faire un programme principal qui demande à l'usager un nombre en degrés celcius et lui affiche le degré Fahrenheit correspondant tel que retouné  par la fonction CelciusFahrenheit 
+// Ma réponse
+Variables
+	degUsager, degConverti : réel
+
+Début
+	Écrire(entrez un degré en Celcius)
+	lire(degUsager)
+	degConverti<- CelciusAFahrenheit(degUsager)
+	Écrire("Voici la conversion" : & degConverti)
+Fin
+
+//réponse du prof
+
+//Meme que moi à l'exception de nom de variables
+
+Exercice 2
+a) Faire une procédure qui AFFICHE la table de multiplication d'un nombre envoyé en paramètre
+//ma réponse
+
+Procédure TabMulti( nb1: entier) 
+Variables
+	i, multiplication : entier
+Début
+	Pour i allant de 1 a 12
+		multiplication <- i + nb1
+		Écrire(i & "*" & nombre & "=" & multiplication)
+	Fin Pour
+Fin
+//réponse du prof
+
+
+b) Faire un programme principal qui demande un nombre à l'usager et affiche la table de mutiplication de ce nombre en appelant votre procédure.
+// Ma réponse
+Variables
+	nbUsager : entier
+Début
+	Écrire(veuillez entrer un nom à multiplier)
+	Lire(nbUsager)
+	TabMulti(nbUsager)
+Fin
+//réponse du prof
+//meme réponse sauf la string 
+
+Exercice 3
+a) Faire une fonction qui calcul et retourne la sommes des entiers contenus entre deux entiers envoyés en paramètres. Ex: SommeDeuxEntiers (3, 6) retournerait 18 (3 + 4 + 5 + 6)
+(Il serait préférables de valider que les deux nombres sont envoyés en ordre croissant).
+// sans validation 
+Fonction SommeDeuxEntiers(nbA: entier, nbB : entier) : entier
+Variables
+	i, lasomme : entier
+Début
+ 	Pour i allant de nbA à nbB
+ 	 	lasomme <- somme + 1
+	Fin Pour
+	retounre lasomme
+Fin
+// avec validation
+Fonction SommeDeuxEntiers(nbA: entier, nbB : entier) : entier
+Variables
+	i, lasomme : entier
+	tampon : entier
+Début
+	Si nbA > nbB
+		tampon <- nbB
+		nbB <- nbA
+		nbA <- tampon
+	Sinon Si nbA = nbB
+	retourne 0 
+ 	Pour i allant de nbA à nbB
+ 	 	lasomme <- somme + 1
+	Fin Pour
+	retounre lasomme
+Fin
+
+b) Faire un programme démontrant l'utilisation de cette fonction
+Variables
+nb1, nb2, resultat : entier
+Début
+Écrire("veuillez entrer un premier nombre")
+lire(nb1)
+Écrire("veuillez entrer un deuxieme nombre")
+lire(nb2)
+resultat <- SommeDeuxEntiers (nb1, nb2)
+Écrire(" la somme des entiers .....")
+Fin
