@@ -1,0 +1,80 @@
+// COURS ALGO 7
+Examen remis au 6 Janvier et correction de l'exercice 2
+
+Devinette
+
+2 a) //Déclarer une constante
+
+Variables
+	i, reponseUsager : entier
+	trouve : booléen
+Constantes
+	reponse = 7 : entier
+Début
+	i <- 0
+	trouve <- faux
+//l'usager va jouer tant qu'il n'a pas trouvé la réponse et qu'il n'a pas eu 3 essais
+
+	TANT QUE i < 3 && trouve = faux
+		i <- i + 1
+		Écrire("Devinez un nombre compris entre 1 et 20, vous avez 3 essais")
+		Lire(reponseUsager)
+
+		Si reponseUsager < reponse
+			Écrire("Essaie plus grand")
+		Sinon Si reponseUsager > reponse
+
+		Sinon 
+			Écrire("Braavo! Vous avez trouvé la bonne réponse!")
+			trouve <- vrai
+		Fin Si
+
+	FIN TANT QUE
+
+	Si trouve = faux
+		Écrire("Vous n'avez pas trouvé la bonne réponse.")
+	Fin Si
+Fin
+
+2 b)  // 
+*
+**
+***
+****
+*****
+
+Variables
+	i, j : entier
+Début
+	POUR i allant de 1 à 5
+		POUR j allant de 1 a i
+		Écrire("*")
+		FIN POUR
+	Écrire("Fin de ligne")
+	FIN POUR
+Fin
+
+//NOTES DE COURS
+
+Procédure AfficheTableau(tableau monTableau : entier)
+Variables
+	i : entier
+Début
+	Pour i allant de 0 à Taille(monTableau)
+		Écrire(monTableau[i])
+	Fin Pour
+Fin
+
+Programme Principal 
+Variables
+	tableau leTableau[10] : entier
+	i : entier
+Début
+	Pour i allant de 0 à 9 
+		Écrire("Entrez un nombre à mettre dans le tableau")
+		Lire(leTableau[i])
+	Fin Pour	
+	AfficheTableau(leTableau)
+Fin
+
+
