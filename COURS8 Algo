@@ -1,0 +1,387 @@
+// COURS 8 ALGO
+
+Exercice #3 Sur les tableaux et les fonctions
+
+Correction
+
+a) 
+Fonction echecOuSucces(noteSurCent: entier) : Booleen
+Debut
+Si notesurCent >=60
+	retourne vrai
+Sinon 
+	retourne faux
+FinSi
+Fin
+
+b)
+Fonction nombreEchec(tableau tabNotes : entier) : entier
+Variables
+	nbEchec, i : entier
+Debut
+	nbEchec <- 0
+	Pour i allant de 0 a Taille(tabNotes) -1   // toujours ecrire ca pour passer a travers un tableau comparer avec moi
+		Si echecOuSucces(tabNotes[i]) = faux
+			nbEchec <- nbEchec + 1
+		Fin Si
+	Fin Pour
+
+	retourne nombreEchec
+Fin
+
+c)
+Programme principal
+Variables
+	tableau tableauNotes[10] : entier
+	nombreEchec : entier
+Debut
+	Pour i allant de 0 a Taille(tableauNote)  - 1
+		Ecrire("Entrez une nouvelle note")
+		Lire(tableauNotes[i])
+	Fin Pour
+
+	echecs <- nombreEchecs(tableauNotes)
+    Écrire("Il y a " & echecs & " échecs dans votre série de notes.")
+Fin
+
+
+
+// Preparation Examen Intra
+
+
+//Exercices de préparation 
+
+a) Faire une fonction qui prend un tableau en paramètres et qui retourne le nombre d'entiers pairs qu'il contient.
+//MA REPONSE
+Fonction nbPairs(tableau monTab : entier) : entier
+	Variables
+		nb, i : entier
+	Debut
+		nb <- 0
+		Pour i allant de 0 a Taille(monTab) - 1 // Absolument pour passer a travers du tableau on doit ecrire -1 trouver une facon de faire que les nombres qui sont retournes soit pairs avec le modulo **bien comprendre le modulo** //
+			Si monTab[i] % 2 = 0
+				nb <- nb + 1
+			Fin Si		
+		Fin Pour
+		retourne nb
+	Fin
+
+	Le calendrier
+
+b) Faire une fonction Bissextile(année) qui calcule si une année est bissextile ou pas. 
+Cette fonction prend en paramètres une année et retourne vrai si l’année est bissextile et fausse si elle ne l’est pas. La règle pour déterminer si une année est bissextile est la suivante : 
+Si l’année n’est pas divisible par 100 mais qu’elle est divisible par 4, elle est bissextile. 
+Si l’année est divisible par 100, alors si le résultat de sa division par 100 est lui-même divisible par 4, elle est bissextile.
+Sinon, elle n’est pas bissextile. 
+ //MA  REPONSE (on n'a pas besoin de boucle dans cette fonction)
+
+ Fontion Bissextile(annee: entier) : booleen
+ Variable
+ 	resultat : booleen
+ Debut
+ 	Si annee %100 != 0 && annee %4 = 0
+		resultat <- vrai
+	Sinon si annee %100 = 0 && (annee/100) %4 = 0
+		resultat <- vrai
+	Sinon 
+		resultat <- faux
+	FinSi
+	retourne resultat
+ Fin
+
+
+c) Faire une autre fonction qui prend en paramètres un mois et une année et qui calcule le nombre de jours dans ce mois. 
+Ex : NombreJoursMois(3, 2012) calcule le nombre de jours pour le mois de mars 2012.
+Les mois 1, 3, 5, 7, 8, 10 et 12 ont tous 31 jours.
+Les mois 4, 6, 9 et 11 ont tous 30 jours.
+Le mois 2 compte 29 jours si l’année est bissextile, et 28 sinon!
+UTILISEZ LA FONCTION BISSEXTILE DÉVELOPPÉE PRÉCÉDEMMENT POUR ARRIVER À LA RÉPONSE!
+
+//MA REPONSE AVEC UN SI 
+Fonction NombreJoursMois(nbMois : entier, nbAnnee : entier) : entier	
+Debut
+	Si nbMois = 2
+		retounre 29
+			Sinon
+			retourne 28
+	Sinon si nbMois = 4 || nbMois = 6 || nbMois = 9 || nbMois = 11
+		retourne 30
+	Sinon
+		retourne 31
+	Fin Si
+Fin
+
+// PRATIQUE EXAMEN INTRA
+QUESTION 1
+a) Il y a une erreur dans la signature de la fonction. Quelle est-elle? 
+ Fonction CalculeNote est un caractere et non un entier
+b) Après avoir corrigé cette erreur, quel résultat obtiendrez-vous pour un total de 30 bonnes réponses? 
+ // une fonction est bcp plus perfomante quand on met retourne note et qu'on stop la fonction que si on l'appel en dernier.
+c) 
+
+d)
+QUESTION 2
+ Un magasin d’impression d’affiches facture 20 dollars pour les cinq premières copies, 10
+dollars les vingt suivantes et 7 dollars pour toutes les affiches supplémentaires. Ecrivez un algorithme qui demande à l’utilisateur le nombre de copies de l’affiche qu’il fait imprimer et qui affiche
+la facture correspondante. // programme principal ceci n'est pas une fonction
+Variables
+	nbCopies : entier
+	total : entier
+Debut
+   	
+	Ecrire("Veuillez entrer le nombre de copie imprimee")
+	Lire(nbCopies)
+		Si nbCopies > 25
+			total <-  100 + 200 + 7 * (nbCopies - 25) 
+        Sinon Si nbCopies > 5 
+	    	total <- 100 + 10 * (nbCopies - 5)
+	    Sinon 
+	    	total <- nbCopies * 20
+	    Fin Si
+
+	    Ecrire(Le prix pour " & nbCopies &  "copies est de :" & total)
+Fin
+
+QUESTION 3
+Vous devez faire deux fonctions qui seront utilisées pour un tout nouveau jeu : le HarveyScrabble.
+Comme dans n’importe quelle version du jeu Scrabble, un joueur fait des points en choisissant un mot.
+Les points sont attribués en fonction des lettres qui composent ce mot. 
+
+A) (3 points) Faire une fonction PointsLettre(lettre) qui reçoit en paramètres un caractère et qui retourne le nombre de points que cette lettre vaut. Les règles sont les suivantes. 
+1. Le H, le R et le V valent pour 5 points.
+2. Le A et le E valent 2 points.
+3. Le Y vaut 10 points.
+4. Les autres caractères (lettres ou autres) ne valent que 1 point.
+5. Les lettres sont toujours en majuscule, vous n’avez pas besoin de traiter les minuscules. 
+
+
+Fonction PointsLettre(lettre : caratere) : entier
+
+Debut
+	Cas ou lettre est 
+	H:
+	R:
+	V:
+		retoune 5
+	A:
+	E:
+		retounre 2
+	Y:
+		retounre 10
+	autre:
+		retoune 1
+	Fin Cas
+Fin
+ 
+ // exemple aussi avec un Si
+
+B) (6 points) Faire une fonction PointsMot(mot) qui reçoit en paramètres un TABLEAU DE CARACTÈRES (et non une chaine de caractères) représentant un mot. Cette fonction doit parcourir le
+tableau de caractères et calculer les points que valent le mot selon deux critères :
+	1. Chaque lettre, évidemment, vaut le nombre de points retourné par la fonction PointsLettre().
+		Vous devez utiliser la fonction PointsLettre développée plus haut pour l’obtenir.
+	2. En plus de la valeur de chaque lettre, le mot comptera pour 20 points de plus si toutes les
+		lettres du mot HARVEY sont utilisées dans le mot au moins une fois. 
+
+Fonction PointsMot( tableau mot : caratere) : entier
+Variables 
+	nbPoints, i : entier
+Debut
+	nbPoints <- 0
+	Pour i allant de  0 a Taille(mot) - 1
+		
+		nbPoints = nbPoints + PointsLettre(mot[i])
+	Fin Pour
+Fin// COURS 8 ALGO
+
+Exercice #3 Sur les tableaux et les fonctions
+
+Correction
+
+a) 
+Fonction echecOuSucces(noteSurCent: entier) : Booleen
+Debut
+Si notesurCent >=60
+	retourne vrai
+Sinon 
+	retourne faux
+FinSi
+Fin
+
+b)
+Fonction nombreEchec(tableau tabNotes : entier) : entier
+Variables
+	nbEchec, i : entier
+Debut
+	nbEchec <- 0
+	Pour i allant de 0 a Taille(tabNotes) -1   // toujours ecrire ca pour passer a travers un tableau comparer avec moi
+		Si echecOuSucces(tabNotes[i]) = faux
+			nbEchec <- nbEchec + 1
+		Fin Si
+	Fin Pour
+
+	retourne nombreEchec
+Fin
+
+c)
+Programme principal
+Variables
+	tableau tableauNotes[10] : entier
+	nombreEchec : entier
+Debut
+	Pour i allant de 0 a Taille(tableauNote)  - 1
+		Ecrire("Entrez une nouvelle note")
+		Lire(tableauNotes[i])
+	Fin Pour
+
+	echecs <- nombreEchecs(tableauNotes)
+    Écrire("Il y a " & echecs & " échecs dans votre série de notes.")
+Fin
+
+
+
+// Preparation Examen Intra
+
+
+//Exercices de préparation 
+
+a) Faire une fonction qui prend un tableau en paramètres et qui retourne le nombre d'entiers pairs qu'il contient.
+//MA REPONSE
+Fonction nbPairs(tableau monTab : entier) : entier
+	Variables
+		nb, i : entier
+	Debut
+		nb <- 0
+		Pour i allant de 0 a Taille(monTab) - 1 // Absolument pour passer a travers du tableau on doit ecrire -1 trouver une facon de faire que les nombres qui sont retournes soit pairs avec le modulo **bien comprendre le modulo** //
+			Si monTab[i] % 2 = 0
+				nb <- nb + 1
+			Fin Si		
+		Fin Pour
+		retourne nb
+	Fin
+
+	Le calendrier
+
+b) Faire une fonction Bissextile(année) qui calcule si une année est bissextile ou pas. 
+Cette fonction prend en paramètres une année et retourne vrai si l’année est bissextile et fausse si elle ne l’est pas. La règle pour déterminer si une année est bissextile est la suivante : 
+Si l’année n’est pas divisible par 100 mais qu’elle est divisible par 4, elle est bissextile. 
+Si l’année est divisible par 100, alors si le résultat de sa division par 100 est lui-même divisible par 4, elle est bissextile.
+Sinon, elle n’est pas bissextile. 
+ //MA  REPONSE (on n'a pas besoin de boucle dans cette fonction)
+
+ Fontion Bissextile(annee: entier) : booleen
+ Variable
+ 	resultat : booleen
+ Debut
+ 	Si annee %100 != 0 && annee %4 = 0
+		resultat <- vrai
+	Sinon si annee %100 = 0 && (annee/100) %4 = 0
+		resultat <- vrai
+	Sinon 
+		resultat <- faux
+	FinSi
+	retourne resultat
+ Fin
+
+
+c) Faire une autre fonction qui prend en paramètres un mois et une année et qui calcule le nombre de jours dans ce mois. 
+Ex : NombreJoursMois(3, 2012) calcule le nombre de jours pour le mois de mars 2012.
+Les mois 1, 3, 5, 7, 8, 10 et 12 ont tous 31 jours.
+Les mois 4, 6, 9 et 11 ont tous 30 jours.
+Le mois 2 compte 29 jours si l’année est bissextile, et 28 sinon!
+UTILISEZ LA FONCTION BISSEXTILE DÉVELOPPÉE PRÉCÉDEMMENT POUR ARRIVER À LA RÉPONSE!
+
+//MA REPONSE AVEC UN SI 
+Fonction NombreJoursMois(nbMois : entier, nbAnnee : entier) : entier	
+Debut
+	Si nbMois = 2
+		retounre 29
+			Sinon
+			retourne 28
+	Sinon si nbMois = 4 || nbMois = 6 || nbMois = 9 || nbMois = 11
+		retourne 30
+	Sinon
+		retourne 31
+	Fin Si
+Fin
+
+// PRATIQUE EXAMEN INTRA
+QUESTION 1
+a) Il y a une erreur dans la signature de la fonction. Quelle est-elle? 
+ Fonction CalculeNote est un caractere et non un entier
+b) Après avoir corrigé cette erreur, quel résultat obtiendrez-vous pour un total de 30 bonnes réponses? 
+ // une fonction est bcp plus perfomante quand on met retourne note et qu'on stop la fonction que si on l'appel en dernier.
+c) 
+
+d)
+QUESTION 2
+ Un magasin d’impression d’affiches facture 20 dollars pour les cinq premières copies, 10
+dollars les vingt suivantes et 7 dollars pour toutes les affiches supplémentaires. Ecrivez un algorithme qui demande à l’utilisateur le nombre de copies de l’affiche qu’il fait imprimer et qui affiche
+la facture correspondante. // programme principal ceci n'est pas une fonction
+Variables
+	nbCopies : entier
+	total : entier
+Debut
+   	
+	Ecrire("Veuillez entrer le nombre de copie imprimee")
+	Lire(nbCopies)
+		Si nbCopies > 25
+			total <-  100 + 200 + 7 * (nbCopies - 25) 
+        Sinon Si nbCopies > 5 
+	    	total <- 100 + 10 * (nbCopies - 5)
+	    Sinon 
+	    	total <- nbCopies * 20
+	    Fin Si
+
+	    Ecrire(Le prix pour " & nbCopies &  "copies est de :" & total)
+Fin
+
+QUESTION 3
+Vous devez faire deux fonctions qui seront utilisées pour un tout nouveau jeu : le HarveyScrabble.
+Comme dans n’importe quelle version du jeu Scrabble, un joueur fait des points en choisissant un mot.
+Les points sont attribués en fonction des lettres qui composent ce mot. 
+
+A) (3 points) Faire une fonction PointsLettre(lettre) qui reçoit en paramètres un caractère et qui retourne le nombre de points que cette lettre vaut. Les règles sont les suivantes. 
+1. Le H, le R et le V valent pour 5 points.
+2. Le A et le E valent 2 points.
+3. Le Y vaut 10 points.
+4. Les autres caractères (lettres ou autres) ne valent que 1 point.
+5. Les lettres sont toujours en majuscule, vous n’avez pas besoin de traiter les minuscules. 
+
+
+Fonction PointsLettre(lettre : caratere) : entier
+
+Debut
+	Cas ou lettre est 
+	H:
+	R:
+	V:
+		retoune 5
+	A:
+	E:
+		retounre 2
+	Y:
+		retounre 10
+	autre:
+		retoune 1
+	Fin Cas
+Fin
+ 
+ // exemple aussi avec un Si
+
+B) (6 points) Faire une fonction PointsMot(mot) qui reçoit en paramètres un TABLEAU DE CARACTÈRES (et non une chaine de caractères) représentant un mot. Cette fonction doit parcourir le
+tableau de caractères et calculer les points que valent le mot selon deux critères :
+	1. Chaque lettre, évidemment, vaut le nombre de points retourné par la fonction PointsLettre().
+		Vous devez utiliser la fonction PointsLettre développée plus haut pour l’obtenir.
+	2. En plus de la valeur de chaque lettre, le mot comptera pour 20 points de plus si toutes les
+		lettres du mot HARVEY sont utilisées dans le mot au moins une fois. 
+
+Fonction PointsMot( tableau mot : caratere) : entier
+Variables 
+	nbPoints, i : entier
+Debut
+	nbPoints <- 0
+	Pour i allant de  0 a Taille(mot) - 1
+		
+		nbPoints = nbPoints + PointsLettre(mot[i])
+	Fin Pour
+Fin
