@@ -1,0 +1,12 @@
+1ère partie (pour 8 points sur 10) : 
+
+En utilisant la fonction Date (dont la documentation est disponible sur PHP.net), afficher à l'usager un message soit :
+
+a) Bonjour! si il est entre 5 heures du matin et midi - 1.
+b) Bon après-midi! si il est entre midi et 21 heures - 1.
+c) Bonne nuit s'il est entre 21 heures et 5 heures du matin - 1.
+
+2ème partie (pour 2 points sur 10) :
+
+En utilisant l'algorithme vu dans la pratique à l'examen ou toute autre méthode que vous trouvez,
+afficher aussi un message lui disant si l'année courante est bissextile ou non.
