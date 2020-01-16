@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>exercice temps Emilie Tassé</title>
+</head>
+	<body>
+<?php
+date_default_timezone_set("America/New_York");
+echo "Aujourd'hui nous sommes le : " . date("Y/m/d") . "<br>";
+
+//a) Bonjour! si il est entre 5 heures du matin et midi - 1.	
+	$heure = date('H.i');
+
+if ($heure >= 05.00 && $heure <=11.59) {
+	echo "Bonjour!" . "<br>";
+ 	} 
+ 	else if ($heure >= 12.00 && $heure <=20.59) {		//b) Bon après-midi! si il est entre midi et 21 heures - 1.
+	echo "Bonne apres-midi!" . "<br>";
+	} 
+ 	else if ($heure >= 21.00 && $heure <=04.59)  {
+ 	echo "Bonne nuit" . "<br>" ;				//c) Bonne nuit s'il est entre 21 heures et 5 heures du matin - 1.
+ }
+ //En utilisant l'algorithme vu dans la pratique à l'examen ou toute autre méthode que vous trouvez,
+//afficher aussi un message lui disant si l'année courante est bissextile ou non.
+
+$B = date("L");
+
+if ($B == 1) {
+    echo "C'est une année bissextile!";
+} else {
+	echo "Ce n'est pas une année bisssextile!";
+}
+
+
+	//echo date('L'); //function for Leap year
+?> 
+	</body>
+</html>
