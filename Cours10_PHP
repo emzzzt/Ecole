@@ -1,0 +1,127 @@
+Cours 10
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cours 10 </title>
+</head>
+<body>
+	<h1>Tableau des cubes et des carrés</h1>
+	<table>
+		<tr>
+		<th>Nombre</th><th>Carré</th><th>Cubes</th>
+	</tr>
+	</table>
+	
+	
+	<?php
+	// correction exercice 10 (ne comptait pas)
+	//echo "<tr>";
+
+	?>
+	</table>
+	<?php 
+	//note de cours pour la boucle FOR ainsi que les exercice
+	// boucle d'affichage des nombre de 1 à 10 
+		for ($i = 1; $i <= 10; $i++) 
+		{ 
+			echo $i . "<br>";		
+		}
+	//a) Calculer la somme des entiers de 1 à 20 avec une boucle FOR
+		$somme = 0;	
+    	for ($i = 1; $i <= 20; $i++)
+    		$somme += $i;
+    		echo "La somme des etiers entre 1 et 20 est $somme . <br>";
+    	
+    ?>
+    		
+	<h1> Faire affiher la table de multiplication du nombre 6 dans une table HTML avec une boucle FOR // Elle va de 1 *6 = 6 à 12 * 6 = 72 </h1>
+	<table  border="1">
+
+	<?php
+		for($i = 1; $i <= 12; $i++)
+		{
+			echo "<tr>";
+			for ($j = 1; $j <= 6; $j++)
+ 			{
+  			echo "<td> $i * $j = ". $i * $j . "</td>";
+ 			}
+  			echo "</tr>";
+  		}
+  		//
+  		//Solution du Prof
+  		//for($i = 1; $i <= 12; $i++)
+		//{
+		//		 echo "<tr>";
+	?>
+	</table>
+
+
+	<?php
+   	//exemple de boucle Imbriquées
+		//for ($i = 1; $i <=10 ; $i++) 
+		//{ 
+			//for ($j = 1; $j <=10 ; $j++) { 
+				//echo "Le compteur i a comme valeur $i et le compteur j a comme valeur $j <br>";
+			//}
+		//}
+
+	?>
+
+
+	<h1>Autres exercices </h1>
+
+		<?php
+	//Faire afficher les tables de multiplication des nombres 1 à 12
+
+	//Déja fait!!!!
+			//les exemples seront sur LEA (impératif de les pratiquer)
+
+	//b) Faire afficher ceci à l'aide de deuc boucles imbriquées.
+			for ( $i = 1; $i <= 5; $i++) 
+			{ 
+				for ($j = 1; $j <= $i; $j++) 
+				{ 
+					echo "*";
+			}
+				echo "<br>";
+			}
+
+	//*
+	//**
+	//***
+	//****
+	//*****
+	
+		?>
+	 <!-- le prochain exercice à remettre sera plus simple en utilisant l'exemple suivant et l'utilisation du BREAK dans n'importe quelle boucle
+	 il y aura aussi l'utilisation dela fonction RAND qui gerene une valeur random (un MIN et un Max) -->
+
+	 <?php
+	 	$compteur1 = 1;
+	 		while ($compteur1 <= 10)
+	 		{	
+	 			if ($compteur1 == 5) 
+					break;
+	 			
+	 			echo "Le compteur ";
+	 		}
+
+	?>
+
+	<!-- Le prof a envoyé l'exemple avec le RAND -->
+
+
+
+
+
+
+
+		
+	</body>
+</html>
+<?php
+   // $multiplication
+    	//for ($i=1; $i <=12 ; $i++) { 
+    	//	echo        . "<br>";
+    	//}
+	?>
