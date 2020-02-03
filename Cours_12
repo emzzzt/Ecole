@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tableaux associatifs</title>
+</head>
+<body>
+	<?php
+		/*$personne =  ["Guillaume", "Harvey", 39];
+		$personne2 = ["Laurence", "Lemieux", 33];
+		$personne3 = ["Doris", "Gauthier", 69];
+
+		function afichePersonne($p)
+		{
+			echo "Prénom :" . $p[0] . "<br>";
+			echo "Nom :" . $p[1] . "<br>";
+			echo "Age :" . $p[2] . "<br>";
+		}
+		 affichePersonne($personne);
+		 echo "<br>";
+		 affichePersonne($personne3);*/
+
+		 //avec les tableaux associatifs -> meilleure solution
+
+		 $GuillaumeAssociatif = array("prenom" => "Guillaume" , "nom" => "Harvey", "age" => "39");
+
+		 function afichePersonne($p)
+		{
+			echo "Prénom :" . $p["prenom"] . "<br>";
+			echo "Nom :" . $p["nom"] . "<br>";
+			echo "Age :" . $p["age"] . "<br>";
+		}
+			$GuillaumeAssociatif["numTelephone"] = "555-555-5555";
+
+			echo "<ul>";
+			//boucler a travers une personne
+			foreach ($GuillaumeAssociatif as $e) 
+			{
+					echo "<li>$e</li>";		# code...
+			}	
+			echo "</ul>";
+
+			echo "<ul>";
+
+			//tableau a index numérique contenant les 3 profs
+
+			//$lesProfesseurs = [$professeur1, $professeur2, $professeur3];
+
+
+
+			//a) ajouter un autre livre dans le tbleu lesLivres en lui donnant le bon code ASIN
+			// et les bons attributs titre et auteur.
+			//b) Affiher un tableau qui affiche les titres, les auteurs ainsi qu'un lien vers la page Amazon de c elivre pour chacun des livres dans votre tableau
+				//structure de données et on ajoute des éléments dans la structures
+			$lesLivres = array(
+				"0307387895" => array("titre" => "The Road", "auteur" => "Cormac McCarthy"),
+				"0307743683" => array("titre" => "The Stand", "auteur" => "Stephen King"),
+				"1408855658" => array("titre" => "Harry Potter and the Philosopher's stone", "auteur" => "J.K. Rowlings"),
+				"0375706674" => array("titre" => "No Country For Old Men", "auteur" => "Cormac McCarthy"),
+				"1941298966" => array("titre" => "Road to perdition", "auteur" => "Max Allan Collins") //livre qui a été ajouté
+			);
+			//la page Amazon du livre est toujours http://www.amazon.ca/dp/(le code ASIN)
+
+				foreach ($lesLivres as $code => $livre) 
+				{
+				
+					echo "<tr>";
+					echo "<td>" . $livre["titre"] . "</td>";     
+					echo "<td>" . $livre["auteur"] . "`</td>";
+					echo "<dt><a href='http://www.amazon.ca/dp/" . $code . "Achetez " . $livre["titre"] . "sur Amazon.com</a>" ;
+
+
+					echo "</tr>";
+				}
+				?>
+				<h1>Tableau des livres</h1>
+
+</body>
+</html>
