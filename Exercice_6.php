@@ -54,3 +54,16 @@ Les points sont attribués que les lettres soient en minuscule ou en majuscule. 
 
 	</body>
 </html>
+date_default_timezone_set('EST')
+			$ajd = date("YmdHi");
+			$ajd2 = date("j F, Y, g:i");
+			$jour = 40;
+			$mois = 0;
+			$annee = 0;
+
+{
+			if ($jour >0 || $jour <=31 || $mois >=1 || $mois <=12 || $annee >0 || $annee <= 3000); 
+			{
+				echo "$ajd2";
+			}
+			echo "$ajd <br> $ajd2"; 
