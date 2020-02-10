@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exercice demande de prêt</title>
+</head>
+<body>
+	<h1>Demande de prêt (Fictive bank)</h1>
+	<form method="GET">
+        Prénom : <input type="text" name="prenom"/>
+        Nom : <input type="text" name="nom"/><br><br>
+        Age : <input type="text" name="age"/>
+        Sexe : 
+        F : <input type="radio" name="feminin" value="oui" checked />
+        M : <input type="radio" name="masculin" value="non" /><br><br>
+        Adresse : <br>
+         <textarea name="adresse"></textarea><br><br>
+            <select name="leSelect">
+                <option>Votre salaire courant : </option>
+                <option value="2">Plus de 50 000$ par an</option>
+                <option value="3">Entre 35 000$ et 50 000$</option>
+                <option value="2">Entre 20 000$ et 35 000$</option>
+                <option value="2"> Moins de 20 000</option>
+            </select><br><br>
+           <!--  -->
+           	Quel autres services pourraient vous interesser? :<br><br>
+            <select name="laSelectionMultiple[]" multiple>
+            
+                <option value="">Assurances</option>
+                <option value="">Cartes de crédit</option>
+                <option value="">Aide au budget</option>
+            </select><br><br>
+            Voulez-vous que l'on vous envoie le résultat par courriel : 
+        <input type="checkbox" name="leCheckbox" value="123"/><br><br>
+        <input type="submit" name="monForm" value="Envoyer"/>
+    </form>
+    	<?php
+    	//	function pret()
+
+    	?>
+</body>
+</html>
