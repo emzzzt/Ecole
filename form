@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Demande de prêt (Fictive bank)</h1>
-    
+
             
                 
             
@@ -18,18 +18,18 @@
             Nom : <input type="text" name="nom"/><br><br>
             Age : <input type="text" name="age"/>
             Sexe : 
-            F : <input type="radio" name="feminin" value="oui" checked />
-            M : <input type="radio" name="masculin" value="non" /><br><br>
+            F : <input type="radio" name="sexe" value="oui"  checked>
+            M : <input type="radio" name="sexe" value="non" ><br><br>
             Adresse : <br>
          <textarea name="adresse"></textarea><br><br>
             <select name="salaire">
                 <option>Votre salaire courant : </option>
-                <option name="cinquante_mille" value="50000">Plus de 50 000$ par an</option>
-                <option name="trente"value="35000">Entre 35 000$ et 50 000$</option>
-                <option name="vingt"value="20000">Entre 20 000$ et 35 000$</option>
-                <option name="moins_vingt"value="19999"> Moins de 20 000</option>
+                <option name="cinquante_mille" value="1">Plus de 50 000$ par an</option>
+                <option name="trente" value="2">Entre 35 000$ et 50 000$</option>
+                <option name="vingt" value="3">Entre 20 000$ et 35 000$</option>
+                <option name="moins_vingt" value="4"> Moins de 20 000</option>
             </select><br><br>
-           <!--  -->
+        
             Quel autres services pourraient vous interesser? :<br><br>
             <select name="laSelectionMultiple[]" multiple>
             
@@ -43,27 +43,43 @@
         <input type="submit" name="monForm" value="Envoyer"/>
     </form>
             <?php
-             $prenom = "";
-             $nom = "";
-             $age ="";
-            // require_once(­­"fonction.php");
-             var_dump(fonction.php);
-              if(isset($_POST["monForm"])){
-                if (isset($_POST["feminin"])) {
-                      echo "Mme. $prenom $nom";
-                    }
-                     else echo "Mr. $prenom $nom "; {
+                 $prenom = "";
+                 $nom = "";
+                 $age ="";
+                 $genre = "";
+                 $decision = "";
 
+
+                require_once("fonction.php");
+               // var_dump($prenom);
+               if(isset($_POST["monForm"])) //traiter pour le genre
+            
+                if ($sexe == "oui")
+                {
+                    $genre = "Mme. ";
                 }
-                if (isset($_POST["prenom"], $_POST["nom"])) {
-                   echo "$prenom $nom";
-                } 
                 else{
-                     echo "Erreur";
+                    $genre = "Mr. ";
                 }
-                if (is_numeric($_POST["age"])) {
-                     # code...
-                 }
+            
+                if(isset($_POST["prenom"]) && isset($_POST["nom"]) && isset($_POST["age"]) && isset($_POST["sexe"]) && isset($_POST["salaire"]) && isset($_POST["adresse"]))
+             { //voir si tout le formulaire est bien rempli
+              
+               if (is_numeric($_POST["age"]) && is_numeric($_POST["salaire"]))
+                {
+                   $decision = Calculpret($_POST["age"], $_POST["salaire"]);
+                
+               }
+               if ($decision == true)
+               {
+                 echo "$genre $prenom $nom votre prêt est accepté ";
+               }
+               else
+
+               {
+                echo "$genre $prenom $nom votre demande de prêt à été refusé";
+               }
+           }
             ?>
     </body>
 </html>
