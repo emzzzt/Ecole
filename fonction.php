@@ -1,30 +1,26 @@
-//fonction pour le form
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Calcul prêt</title>
-</head>
-<meta charset="utf-8">
-<body>
-		<?php
+	<?php
 		
-        function Calculpret($age, $salaire){
-            $pret = true;
-            if ($age < 18){
-                if ($age >= 25 && $salaire < 25000 ){
-                    $pret = false;
+        function Calculpret($age, $salaire)
+            {
+                if ($age <= 18 || $age > 99)
+                {
+                    return false;
+                } 
+                elseif ($age >= 25 && $salaire < "3" )
+                {
+                    return  false;
                 }
-                elseif ($age >= 35 && $salaire < 35000 ){
-                    $pret = false;
+                elseif ($age >= 35 && $salaire = "2" )
+                {
+                    return  false;
                 }
-                elseif ($age >= 50 && $salaire < 50000){
-                    $pret = false;
+                elseif ($age >= 50 && $salaire = "1" )
+                {
+                    return  false;
                 }
-                else{
-                  $pret = false;
+                else
+                {
+                return true;
                 }
-                return $pret
-    
+            }
         ?>
-</body>
-</html>
