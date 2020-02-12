@@ -4,7 +4,20 @@
 	<meta charset="utf-8">
 	<title>Form RegEx</title>
 	<!--Faire un formulaire de don qui demande à un usager :
-
+	php  '%[$"\'\n\d/\\\\]%'  '/regex/'  [1-9] [0-9] preg function
+	whenever you want to do something with a regular expression, you have to pass it as a string
+	to one of the preg functions
+	preg_match() returns 1 if a match can be found and 0 when the regex cannot match the subject at all
+	there is also preg_match_all() it will find all matche in the string iterate over the array with the
+	match result.
+	left to right
+	Limit input to alphanumeric charcaters
+	application requires thats users limit their responses to one or more alphanumeric English 
+	charaters
+	Strip leading zeros you want to match an integer number, and either return the number
+	without any leading zeros or delete the leading zeros
+	$result = preg_replace('/\b0*([1-9][0-9]*|0)\b/', '$1', $subject); 
+	
 a) son numéro d'assurance sociale et
 
 b) un montant valide entre 0$ et 99.99$. 
