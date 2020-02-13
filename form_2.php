@@ -16,7 +16,7 @@
 	charaters
 	Strip leading zeros you want to match an integer number, and either return the number
 	without any leading zeros or delete the leading zeros
-	$result = preg_replace('/\b0*([1-9][0-9]*|0)\b/', '$1', $subject); 
+	$result = preg_replace('/\b0*([1-9][0-9]*|0)\b/', '$1', $subject);    
 	Numbers for a certain range 1-100 
 	
 a) son numéro d'assurance sociale et
