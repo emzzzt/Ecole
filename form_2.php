@@ -13,7 +13,7 @@
 		//echo "ok!"; //echo pour tester si ma page fonctionnait
 		$nas = $_POST["nas"]; // valider que la bonne chose est appellée
 
-		$reg_ex_nas = "/\d{3} \d{3} \d{3}/"; // regex pour que les 9 chiffres soient séparés en 3 blocks
+		$reg_ex_nas = "/^\d{3} ?\d{3} ?\d{3}$/"; // regex pour que les 9 chiffres soient séparés en 3 blocks
 
 		$resultat = preg_match($reg_ex_nas, $nas);
 		//preg_match() returns 1 if a match can be found and 0 when the regex cannot match the subject at all
